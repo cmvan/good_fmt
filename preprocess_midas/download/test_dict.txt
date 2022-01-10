@@ -1,0 +1,55 @@
+Test Dictionaries:
+FAT_006_sample_dict = {'SAMEA3882503': ['ERR1297459', 'ERR1297542', 'ERR1297480', 'ERR1297502'], 
+                       'SAMEA3882504': ['ERR1297524', 'ERR1297466', 'ERR1297535', 'ERR1297568'],
+                       'SAMEA3882505': ['ERR1297550', 'ERR1297477', 'ERR1297489', 'ERR1297599'],
+                       'SAMEA3882506': ['ERR1297575', 'ERR1297544', 'ERR1297521', 'ERR1297476'],
+                       'SAMEA3882507': ['ERR1297633', 'ERR1297603', 'ERR1297519', 'ERR1297595']}
+
+FAT_006_dict = {'FAT_006': ['SAMEA3882503', 'SAMEA3882504', 'SAMEA3882505', 'SAMEA3882506', 'SAMEA3882507']}
+
+For download.py and bash_download_loop.py:
+download(FAT_006_dict, FAT_006_sample_dict, "single")
+
+
+FAT_012_sample_dict = {'SAMEA3882518': ['ERR1297501', 'ERR1297523', 'ERR1297497', 'ERR1297591'], 
+                       'SAMEA3882519': ['ERR1297481', 'ERR1297606', 'ERR1297579', 'ERR1297561'], 
+                       'SAMEA3882520': ['ERR1297484', 'ERR1297558', 'ERR1297465', 'ERR1297541'],
+                       'SAMEA3882521': ['ERR1297491', 'ERR1297621', 'ERR1297457'],
+                       'SAMEA3882522': ['ERR1297566', 'ERR1297608', 'ERR1297486', 'ERR1297469']}
+
+FAT_012_dict = {'FAT_012': ['SAMEA3882518', 'SAMEA3882519', 'SAMEA3882520', 'SAMEA3882521', 'SAMEA3882522']}
+
+For download.py and bash_download_loop.py:
+download(FAT_012_dict, FAT_012_sample_dict, "single")
+
+
+FAT_DON_8_dict = {'FAT_DON_8-22-0-0': ['SAMEA3882557']}
+
+FAT_DON_8_sample_dict = {'SAMEA3882557': ['ERR1297628', 'ERR1297620', 'ERR1297428', 'ERR1297637']}
+
+For download.py and bash_download_loop.py:
+download(FAT_DON_8_dict, FAT_DON_8_sample_dict, "single")
+
+
+FAT_011_dict = {'FAT_DON_11-22-0-4': ['SAMEA3882553'],
+                    'FAT_DON_11-22-0-5': ['SAMEA3882554'],
+                    'FAT_DON_11-22-0-6': ['SAMEA3882555']}
+    
+FAT_011_sample_dict = {'SAMEA3882553': ['ERR1297573', 'ERR1297508', 'ERR1297506'],
+                       'SAMEA3882554': ['ERR1297427', 'ERR1297611', 'ERR1297589', 'ERR1297630'],
+                       'SAMEA3882555': ['ERR1297500', 'ERR1297527', 'ERR1297426', 'ERR1297627']}
+
+For download.py and bash_download_loop.py:
+download(FAT_011_dict, FAT_011_dict, "single")
+
+
+Sample unit dictionaries template (final used to donwload FASTQ files)
+people_dict = {'FAT_024': people_to_sample['FAT_024']}
+    
+sample_dict = {people_to_sample['FAT_024'][0]: paired_samples[people_to_sample['FAT_024'][0]],
+                people_to_sample['FAT_024'][1]: paired_samples[people_to_sample['FAT_024'][1]],
+                people_to_sample['FAT_024'][2]: paired_samples[people_to_sample['FAT_024'][2]],
+                people_to_sample['FAT_024'][3]: paired_samples[people_to_sample['FAT_024'][3]],
+                people_to_sample['FAT_024'][4]: paired_samples[people_to_sample['FAT_024'][4]]}
+
+print(people_to_sample)

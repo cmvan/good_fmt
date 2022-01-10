@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH --nodes=2
+#SBATCH --mem=10G
+#SBATCH --job-name=midas_fastqs_species
+#SBATCH --error=whole_midas_species_%j.err
+#SBATCH --output=whole_midas_species_%j.out
+#SBATCH --time=3-00:00:00
+#SBATCH --qos=long
+
+ml py-numpy/1.14.3_py27
+ml py-pandas/0.23.0_py27
+ml biology
+ml py-biopython/1.70_py27
+ml py-pysam/0.14.1_py27
+ml bowtie2
+
+python $HOME/midas_fastqs.py $SCRATCH/SraRunTable_Relevant.tsv $HOME/species.sh
+# sbatch -c 4 midas_fastqs_species.job
+
+"""
+Sherlock job script to complete MIDAS species processing
+"""

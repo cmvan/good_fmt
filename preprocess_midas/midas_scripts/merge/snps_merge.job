@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH --nodes=2
+#SBATCH --mem=10G
+#SBATCH --job-name=merge_fastqs_snps
+#SBATCH --error=snps_merge_%j.err
+#SBATCH --output=snps_merge_%j.out
+#SBATCH --time=3-00:00:00
+#SBATCH --qos=long
+
+ml py-numpy/1.14.3_py27
+ml py-pandas/0.23.0_py27
+ml biology
+ml py-biopython/1.70_py27
+ml py-pysam/0.14.1_py27
+ml bowtie2
+
+python $HOME/merge_midas_fastqs.py $SCRATCH/SraRunTable_Relevant.tsv $HOME/merge_snps.sh
+# sbatch -c 4 snps_merge.job

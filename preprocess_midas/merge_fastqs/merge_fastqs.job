@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH --nodes=5
+#SBATCH --mem=55G
+#SBATCH --job-name=merge_fastqs
+#SBATCH --error=merged_fastqs_%j.err
+#SBATCH --output=merged_fastqs_%j.out
+#SBATCH --time=01:30:00
+
+ml py-numpy/1.14.3_py27
+ml py-pandas/0.23.0_py27
+
+python $HOME/merge_fastqs.py $SCRATCH/SraRunTable_Relevant.tsv
+# sbatch merge_fastqs.job
+
+"""
+Comments:
+- Time < 10 minutes
+- --mem = memory per node
+- Consider number of nodes/CPUS used when calculating time and memory
+"""

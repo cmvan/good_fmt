@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --nodes=2
+#SBATCH --mem=5G
+#SBATCH --job-name=FAT_DON_8_snps_process
+#SBATCH --error=sherlock_out/FAT_DON_8_snps_process_snps.err
+#SBATCH --output=sherlock_out/FAT_DON_8_snps_process_snps.out
+#SBATCH --time=18:00:00
+#SBATCH --qos=normal
+
+ml py-numpy/1.14.3_py27
+ml py-pandas/0.23.0_py27
+ml biology
+ml py-biopython/1.70_py27
+ml py-pysam/0.14.1_py27
+ml bowtie2
+
+time python $HOME/run_midas_by_increment.py FAT_DON_8 preprocess_midas/SraRunTable_Relevant.tsv $HOME/snps.sh
